@@ -1,7 +1,23 @@
 import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
+import Home from './components/Home';
+import JobInfo from './components/JobInfo';
 
 function App() {
-  return <div className='App'>hello world</div>;
+  return (
+    <div>
+      <Link to='/'>Github Jobs</Link>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+
+        <Route path='/:jobId'>
+          <JobInfo />
+        </Route>
+      </Switch>
+    </div>
+  );
 }
 
 export default App;
