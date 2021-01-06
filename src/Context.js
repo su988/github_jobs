@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [jobs, setJobs] = useState([]);
 
@@ -16,8 +16,14 @@ function ContextProvider({ children }) {
       .then((result) => setJobs(result));
   }, []);
 
+  console.log(jobs);
+
+  const handleSearch = () => {};
+
   return (
-    <Context.Provider value={{ name: 'suyash' }}>{children}</Context.Provider>
+    <Context.Provider value={{ jobs, handleSearch }}>
+      {children}
+    </Context.Provider>
   );
 }
 

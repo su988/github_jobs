@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import JobsList from './JobsList';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
+import JobsList from '../components/JobsList';
 
 function Home() {
   return (
