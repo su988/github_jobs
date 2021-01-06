@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../Context';
 
 function JobInfo() {
-  return <div>jobs info</div>;
+  const { name } = useContext(Context);
+
+  return (
+    <div>
+      <h4>jobs info</h4>
+      {name}
+    </div>
+  );
 }
 
 export default JobInfo;
