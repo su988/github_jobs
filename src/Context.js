@@ -10,15 +10,23 @@ function ContextProvider({ children }) {
   const url =
     'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
 
-  useEffect(() => {
+  const fetchData = () => {
     fetch(url)
       .then((res) => res.json())
       .then((result) => setJobs(result));
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   console.log(jobs);
 
   const handleSearch = (keyword) => {
+    if (keyword === '') {
+      fetchData();
+    }
+
     setJobs((prevJobs) =>
       prevJobs.filter(
         (job) =>

@@ -7,7 +7,6 @@ function SearchBar() {
 
   const handleChange = (e) => {
     setKeyword(e.target.value);
-    handleSearch(keyword);
   };
 
   const handleSubmit = () => {

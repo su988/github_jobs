@@ -20,7 +20,7 @@ function JobsList() {
   return (
     <main>
       <h4>Job List</h4>
-      {jobsList}
+      {jobs.length === 0 ? 'No Matching Result' : jobsList}
     </main>
   );
 }
