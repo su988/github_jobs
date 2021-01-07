@@ -16,8 +16,9 @@ function ContextProvider({ children }) {
     fetch(url)
       .then((res) => res.json())
       .then((result) => {
-        setJobs(result);
         setIsLoaded(true);
+        setJobs(result);
+        setFilteredJobs(result);
       });
   };
 
@@ -25,11 +26,9 @@ function ContextProvider({ children }) {
     fetchData();
   }, []);
 
-  console.log(jobs);
-
   const handleSearch = (keyword, bool = false) => {
     if (keyword === '') {
-      fetchData();
+      setFilteredJobs(jobs);
     }
 
     if (bool) {
@@ -38,15 +37,15 @@ function ContextProvider({ children }) {
           job.location.toLowerCase().includes(keyword.toLowerCase())
         )
       );
+    } else {
+      setFilteredJobs(
+        jobs.filter(
+          (job) =>
+            job.title.toLowerCase().includes(keyword.toLowerCase()) ||
+            job.company.toLowerCase().includes(keyword.toLowerCase())
+        )
+      );
     }
-
-    setFilteredJobs(
-      jobs.filter(
-        (job) =>
-          job.title.toLowerCase().includes(keyword.toLowerCase()) ||
-          job.company.toLowerCase().includes(keyword.toLowerCase())
-      )
-    );
   };
 
   return (
