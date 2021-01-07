@@ -7,6 +7,9 @@ function SearchBar(props) {
 
   const handleChange = (e) => {
     setKeyword(e.target.value);
+    if (props.location === 'sidebar') {
+      handleSearch(keyword, true);
+    }
   };
 
   const handleSubmit = () => {
@@ -18,7 +21,11 @@ function SearchBar(props) {
       <input
         type='text'
         name='keyword'
-        placeholder='Job title or company'
+        placeholder={
+          props.location === 'header'
+            ? 'Job title or company'
+            : 'City or remote'
+        }
         value={keyword}
         onChange={handleChange}
       />
