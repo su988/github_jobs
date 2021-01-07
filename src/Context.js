@@ -11,6 +11,7 @@ function ContextProvider({ children }) {
     'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
 
   const fetchData = () => {
+    setIsLoaded(false);
     fetch(url)
       .then((res) => res.json())
       .then((result) => {

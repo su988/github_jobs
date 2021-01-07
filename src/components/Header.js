@@ -5,7 +5,7 @@ function Header() {
   return (
     <div>
       <h4>Header</h4>
-      <SearchBar />
+      <SearchBar location={'header'} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Context } from '../Context';
 
-function SearchBar() {
+function SearchBar(props) {
   const [keyword, setKeyword] = useState('');
   const { handleSearch } = useContext(Context);
 
@@ -22,7 +22,9 @@ function SearchBar() {
         value={keyword}
         onChange={handleChange}
       />
-      <button onClick={handleSubmit}>Search</button>
+      {props.location === 'header' ? (
+        <button onClick={handleSubmit}>Search</button>
+      ) : null}
     </div>
   );
 }

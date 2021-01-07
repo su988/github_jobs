@@ -5,7 +5,7 @@ function Sidebar() {
   return (
     <div>
       <h4>sidebar</h4>
-      {/* <SearchBar /> */}
+      <SearchBar location={'sidebar'} />
     </div>
   );
 }
