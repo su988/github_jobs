@@ -18,7 +18,21 @@ function ContextProvider({ children }) {
 
   console.log(jobs);
 
-  const handleSearch = () => {};
+  const handleSearch = (keyword) => {
+    setJobs((prevJobs) =>
+      prevJobs.filter(
+        (job) =>
+          job.title
+            .trim()
+            .toLowerCase()
+            .includes(keyword.trim().toLowerCase()) ||
+          job.company
+            .trim()
+            .toLowerCase()
+            .includes(keyword.trim().toLowerCase())
+      )
+    );
+  };
 
   return (
     <Context.Provider value={{ jobs, handleSearch }}>
