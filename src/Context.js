@@ -13,7 +13,10 @@ function ContextProvider({ children }) {
   const fetchData = () => {
     fetch(url)
       .then((res) => res.json())
-      .then((result) => setJobs(result));
+      .then((result) => {
+        setIsLoaded(true);
+        setJobs(result);
+      });
   };
 
   useEffect(() => {
@@ -43,7 +46,7 @@ function ContextProvider({ children }) {
   };
 
   return (
-    <Context.Provider value={{ jobs, handleSearch }}>
+    <Context.Provider value={{ jobs, handleSearch, isLoaded }}>
       {children}
     </Context.Provider>
   );

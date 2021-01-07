@@ -3,7 +3,7 @@ import JobCard from './JobCard';
 import { Context } from '../Context';
 
 function JobsList() {
-  const { jobs, handleSearch } = useContext(Context);
+  const { jobs, handleSearch, isLoaded } = useContext(Context);
 
   const jobsList = jobs.map((job) => (
     <JobCard
@@ -20,6 +20,7 @@ function JobsList() {
   return (
     <main>
       <h4>Job List</h4>
+      {!isLoaded ? <div>Loading...</div> : null}
       {jobs.length === 0 ? (
         <div>
           <h6>No Matching Result</h6>
