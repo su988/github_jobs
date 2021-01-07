@@ -3,7 +3,7 @@ import JobCard from './JobCard';
 import { Context } from '../Context';
 
 function JobsList() {
-  const { jobs } = useContext(Context);
+  const { jobs, handleSearch } = useContext(Context);
 
   const jobsList = jobs.map((job) => (
     <JobCard
@@ -20,7 +20,14 @@ function JobsList() {
   return (
     <main>
       <h4>Job List</h4>
-      {jobs.length === 0 ? 'No Matching Result' : jobsList}
+      {jobs.length === 0 ? (
+        <div>
+          <h6>No Matching Result</h6>
+          <button onClick={() => handleSearch('')}>Go back</button>
+        </div>
+      ) : (
+        jobsList
+      )}
     </main>
   );
 }
