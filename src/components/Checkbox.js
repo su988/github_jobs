@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../Context';
 
 function Checkbox(props) {
-  const handleCheck = (e) => {
-    // console.log(e.target.data);
+  const { checkboxFilter } = useContext(Context);
+
+  const handleCheckbox = (e) => {
+    // console.log(e.target.checked);
+    // console.log(e.target.dataset.id);
+    checkboxFilter(e.target.checked, e.target.dataset.id);
   };
 
   return (
     <div>
       <label>
-        <input type='checkbox' data-id={props.id} onClick={handleCheck} />
+        <input
+          type={props.id === 'Full Time' ? 'checkbox' : 'radio'}
+          data-id={props.id}
+          onClick={handleCheckbox}
+        />
         {props.id}
       </label>
     </div>
