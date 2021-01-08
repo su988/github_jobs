@@ -7,6 +7,7 @@ function ContextProvider({ children }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState('');
 
   // https://cors-anywhere.herokuapp.com/https://jobs.github.com
   const url = '/positions.json';
@@ -26,10 +27,10 @@ function ContextProvider({ children }) {
     fetchData();
   }, []);
 
+  // useEffect(() => {}, [searchTerm]);
+
   const handleSearch = (keyword, bool = false) => {
-    if (keyword === '') {
-      setFilteredJobs(jobs);
-    }
+    // setSearchTerm(keyword);
 
     if (bool) {
       setFilteredJobs(
@@ -47,6 +48,11 @@ function ContextProvider({ children }) {
       );
     }
   };
+
+  // console.log('jobs');
+  // console.log(jobs);
+  // console.log('filteredJobs');
+  console.log(filteredJobs);
 
   return (
     <Context.Provider value={{ filteredJobs, handleSearch, isLoaded }}>

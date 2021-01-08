@@ -8,7 +8,7 @@ function SearchBar(props) {
   const handleChange = (e) => {
     setKeyword(e.target.value);
     if (props.location === 'sidebar') {
-      handleSearch(keyword, true);
+      handleSearch(e.target.value, true);
     }
   };
 
