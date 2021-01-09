@@ -8,7 +8,6 @@ function ContextProvider({ children }) {
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
 
-  // https://cors-anywhere.herokuapp.com/https://jobs.github.com
   const url = '/positions.json';
 
   const fetchData = () => {
@@ -26,25 +25,17 @@ function ContextProvider({ children }) {
     fetchData();
   }, []);
 
-  const handleSearch = (keyword, bool = false) => {
-    if (bool) {
-      setFilteredJobs(
-        jobs.filter((job) =>
-          job.location.toLowerCase().includes(keyword.toLowerCase())
-        )
-      );
-    } else {
-      setFilteredJobs(
-        jobs.filter(
-          (job) =>
-            job.title.toLowerCase().includes(keyword.toLowerCase()) ||
-            job.company.toLowerCase().includes(keyword.toLowerCase())
-        )
-      );
-    }
+  const handleSearch = (keyword) => {
+    setFilteredJobs(
+      jobs.filter(
+        (job) =>
+          job.title.toLowerCase().includes(keyword.toLowerCase()) ||
+          job.company.toLowerCase().includes(keyword.toLowerCase())
+      )
+    );
   };
 
-  const checkboxFilter = (bool, id) => {
+  const filterFullTime = (bool, id) => {
     if (bool) {
       setFilteredJobs(jobs.filter((job) => job.type.includes(id)));
     } else {
@@ -52,14 +43,25 @@ function ContextProvider({ children }) {
     }
   };
 
-  // console.log('jobs');
-  // console.log(jobs);
-  // console.log('filteredJobs');
+  const filterLocation = (city) => {
+    setFilteredJobs(
+      jobs.filter((job) =>
+        job.location.toLowerCase().includes(city.toLowerCase())
+      )
+    );
+  };
+
   console.log(filteredJobs);
 
   return (
     <Context.Provider
-      value={{ filteredJobs, isLoaded, handleSearch, checkboxFilter }}
+      value={{
+        filteredJobs,
+        isLoaded,
+        handleSearch,
+        filterFullTime,
+        filterLocation
+      }}
     >
       {children}
     </Context.Provider>

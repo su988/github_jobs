@@ -3,12 +3,12 @@ import { Context } from '../Context';
 
 function SearchBar(props) {
   const [keyword, setKeyword] = useState('');
-  const { handleSearch } = useContext(Context);
+  const { handleSearch, filterLocation } = useContext(Context);
 
   const handleChange = (e) => {
     setKeyword(e.target.value);
     if (props.location === 'sidebar') {
-      handleSearch(e.target.value, true);
+      filterLocation(e.target.value);
     }
   };
 
