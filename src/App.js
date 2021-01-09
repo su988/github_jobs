@@ -2,10 +2,12 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import JobDetail from './pages/JobDetail';
+import { Container } from '@material-ui/core';
+import './app.css';
 
 function App() {
   return (
-    <div>
+    <Container>
       <h4>Github Jobs</h4>
       <Switch>
         <Route exact path='/'>
@@ -16,7 +18,7 @@ function App() {
           <JobDetail />
         </Route>
       </Switch>
-    </div>
+    </Container>
   );
 }
 

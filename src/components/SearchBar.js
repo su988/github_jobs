@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Context } from '../Context';
+import './searchBar.css';
 
 function SearchBar(props) {
   const [keyword, setKeyword] = useState('');
@@ -17,7 +18,11 @@ function SearchBar(props) {
   };
 
   return (
-    <div>
+    <div
+      className={
+        props.location === 'header' ? 'headerSearchBar' : 'sideSearchBar'
+      }
+    >
       <input
         type='text'
         name='keyword'

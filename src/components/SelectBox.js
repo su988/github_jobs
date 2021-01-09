@@ -1,5 +1,6 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, Fragment } from 'react';
 import { Context } from '../Context';
+import './selectBox.css';
 
 function SelectBox(props) {
   const { filterFullTime, filterLocation } = useContext(Context);
@@ -16,18 +17,20 @@ function SelectBox(props) {
   }, [selectedValue]);
 
   return (
-    <div>
+    <Fragment>
       {props.id === 'Full Time' ? (
-        <label>
-          <input
-            type={'checkbox'}
-            data-id={props.id}
-            onClick={handleCheckbox}
-          />
-          {props.id}
-        </label>
+        <div className='checkbox'>
+          <label>
+            <input
+              type={'checkbox'}
+              data-id={props.id}
+              onClick={handleCheckbox}
+            />
+            {props.id}
+          </label>
+        </div>
       ) : (
-        <div>
+        <div className='radio'>
           <label>
             <input
               type='radio'
@@ -66,7 +69,7 @@ function SelectBox(props) {
           </label>
         </div>
       )}
-    </div>
+    </Fragment>
   );
 }
 

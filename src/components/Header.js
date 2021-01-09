@@ -1,10 +1,15 @@
 import React from 'react';
 import SearchBar from './SearchBar';
+import './header.css';
 
 function Header() {
   return (
-    <div>
-      <h4>Header</h4>
+    <div
+      className='header'
+      style={{
+        backgroundImage: `url('/images/backgroundImg.png')`
+      }}
+    >
       <SearchBar location={'header'} />
     </div>
   );

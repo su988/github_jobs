@@ -4,8 +4,7 @@ import SelectBox from './SelectBox';
 
 function Sidebar() {
   return (
-    <div>
-      <h4>sidebar</h4>
+    <div className='sideBar'>
       <SelectBox id={'Full Time'} />
       <SearchBar location={'sidebar'} />
       <SelectBox />

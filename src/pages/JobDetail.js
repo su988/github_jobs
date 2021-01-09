@@ -8,6 +8,7 @@ function JobInfo() {
 
   useEffect(() => {
     getJobDetail(jobId);
+    window.scrollTo(0, 0);
   });
 
   return (

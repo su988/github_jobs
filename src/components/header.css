@@ -1,0 +1,11 @@
+.header {
+  border-radius: 8px;
+  display: flex;
+  height: 138px;
+
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
