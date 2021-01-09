@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function JobCard(props) {
+function JobCard({ id, logo, company, title, type, location, date }) {
   return (
-    <div key={props.id}>
-      <img src={props.logo} alt='' width='60' height='60' />
-      <p>{props.company}</p>
-      <p>{props.title}</p>
-      <p>{props.type}</p>
-      <p>{props.location}</p>
-      <p>{props.date}</p>
+    <div key={id}>
+      <Link to={`/${id}`}>
+        <img src={logo} alt='' width='60' height='60' />
+        <p>{company}</p>
+        <p>{title}</p>
+      </Link>
+      <p>{type}</p>
+      <p>{location}</p>
+      <p>{date}</p>
     </div>
   );
 }

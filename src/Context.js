@@ -7,6 +7,7 @@ function ContextProvider({ children }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
+  const [selectedJob, setSelectedJob] = useState('');
 
   const url = '/positions.json';
 
@@ -51,6 +52,10 @@ function ContextProvider({ children }) {
     );
   };
 
+  const getJobDetail = (id) => {
+    setSelectedJob(jobs.find((job) => job.id === id));
+  };
+
   console.log(filteredJobs);
 
   return (
@@ -60,7 +65,9 @@ function ContextProvider({ children }) {
         isLoaded,
         handleSearch,
         filterFullTime,
-        filterLocation
+        filterLocation,
+        getJobDetail,
+        selectedJob
       }}
     >
       {children}

@@ -8,6 +8,7 @@ function JobsList() {
   const jobsList = filteredJobs.map((job) => (
     <JobCard
       key={job.id}
+      id={job.id}
       logo={job.company_logo}
       title={job.title}
       company={job.company}
@@ -20,7 +21,7 @@ function JobsList() {
   return (
     <main>
       <h4>Job List</h4>
-      {!isLoaded ? <div>Loading...</div> : null}
+      {!isLoaded && <div>Loading...</div>}
       {filteredJobs.length === 0 ? (
         <div>
           <h6>No Matching Result</h6>

@@ -1,19 +1,19 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import JobInfo from './pages/JobInfo';
+import JobDetail from './pages/JobDetail';
 
 function App() {
   return (
     <div>
-      <Link to='/'>Github Jobs</Link>
+      <h4>Github Jobs</h4>
       <Switch>
         <Route exact path='/'>
           <Home />
         </Route>
 
         <Route path='/:jobId'>
-          <JobInfo />
+          <JobDetail />
         </Route>
       </Switch>
     </div>
