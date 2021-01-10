@@ -8,7 +8,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <Grid container justify='space-between'>
+      <Grid container>
         <Grid item>
           <Sidebar />
         </Grid>

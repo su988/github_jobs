@@ -1,3 +1,9 @@
 .jobsList {
   margin: 25px 0;
 }
+
+@media (min-width: 768px) {
+  .jobsList {
+    margin-left: 30px;
+  }
+}
