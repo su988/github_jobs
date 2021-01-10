@@ -18,6 +18,10 @@
   background-color: #fff;
 }
 
+.card-left img {
+  border-radius: 10px;
+}
+
 .card-right p {
   margin-left: 15px;
   color: #334680;

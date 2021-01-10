@@ -1,0 +1,104 @@
+.side a {
+  text-decoration: none;
+}
+
+.side p {
+  font-family: Poppins;
+}
+
+.side a p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #1e86ff;
+  display: inline-block;
+}
+
+#apply {
+  color: #b9bdcf;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+#apply-how {
+  font-family: 'Poppins';
+  font-size: 14px;
+  color: #334680;
+}
+
+#title {
+  font-family: 'Roboto';
+  font-weight: 700;
+  color: #334680;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  margin-top: 40px;
+}
+
+#type {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: #334680;
+  border: 1px solid #334680;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 8px;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+#date {
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #b7bcce;
+}
+
+#logo {
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+#company {
+  font-family: 'Roboto';
+  font-size: 18px;
+  color: #334680;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+#location {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #b9bdcf;
+  margin-bottom: 0;
+}
+
+#description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  /* or 24px */
+
+  color: #334680;
+}
+
+.logo-flex {
+  display: flex;
+  align-items: center;
+}
