@@ -37,12 +37,8 @@ function JobInfo() {
           </div>
           <div className='main'>
             <div className='main-flex'>
-              <div>
-                <p id='title'>{selectedJob.title}</p>
-              </div>
-              <div>
-                <p id='type'>{selectedJob.type}</p>
-              </div>
+              <p id='title'>{selectedJob.title}</p>
+              <p id='type'>{selectedJob.type}</p>
             </div>
             <p id='date'>
               <FaRegClock />
