@@ -56,6 +56,12 @@
   font-weight: 500;
   color: #b7bcce;
   font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.card-right .card-footer p time {
+  background-color: #fff;
 }
 
 svg {

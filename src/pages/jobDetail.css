@@ -17,6 +17,11 @@
   display: inline-block;
 }
 
+#back-arrow {
+  display: flex;
+  align-items: center;
+}
+
 #apply {
   color: #b9bdcf;
   font-weight: 700;
@@ -60,6 +65,8 @@
   font-family: 'Roboto';
   font-size: 12px;
   color: #b7bcce;
+  display: flex;
+  align-items: center;
 }
 
 #logo {
@@ -84,6 +91,8 @@
   line-height: 14px;
   color: #b9bdcf;
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 #description {
@@ -101,6 +110,16 @@
 .logo-flex {
   display: flex;
   align-items: center;
+}
+
+.loading {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #334680;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 1025px) {

@@ -2,7 +2,12 @@ import React, { useContext, useEffect, Fragment } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Context } from '../Context';
 import './jobDetail.css';
-import { FaLongArrowAltLeft } from 'react-icons/fa';
+import {
+  FaLongArrowAltLeft,
+  FaGlobeAmericas,
+  FaRegClock
+} from 'react-icons/fa';
+import ReactTimeAgo from 'react-time-ago';
 
 function JobInfo() {
   const { jobId } = useParams();
@@ -19,7 +24,7 @@ function JobInfo() {
         <div className='jobDetail'>
           <div className='side'>
             <Link to='/'>
-              <p>
+              <p id='back-arrow'>
                 <FaLongArrowAltLeft />
                 Back to search
               </p>
@@ -39,7 +44,11 @@ function JobInfo() {
                 <p id='type'>{selectedJob.type}</p>
               </div>
             </div>
-            <p id='date'>{selectedJob.created_at}</p>
+            <p id='date'>
+              <FaRegClock />
+              <ReactTimeAgo date={selectedJob.created_at} locale='en-US' />
+            </p>
+
             <div className='logo-flex'>
               <div>
                 <img
@@ -52,7 +61,10 @@ function JobInfo() {
               </div>
               <div>
                 <p id='company'>{selectedJob.company}</p>
-                <p id='location'>{selectedJob.location}</p>
+                <p id='location'>
+                  <FaGlobeAmericas />
+                  {selectedJob.location}
+                </p>
               </div>
             </div>
             <div
@@ -62,7 +74,9 @@ function JobInfo() {
           </div>
         </div>
       ) : (
-        <div onClick={getJobDetail(jobId)}>Loading...</div>
+        <div onClick={getJobDetail(jobId)} className='loading'>
+          Loading...
+        </div>
       )}
     </Fragment>
   );

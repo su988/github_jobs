@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './jobCard.css';
 import { FaGlobeAmericas, FaRegClock } from 'react-icons/fa';
+import ReactTimeAgo from 'react-time-ago';
 
 function JobCard({ id, logo, company, title, type, location, date }) {
   return (
@@ -21,7 +22,7 @@ function JobCard({ id, logo, company, title, type, location, date }) {
             </p>
             <p>
               <FaRegClock />
-              {date}
+              <ReactTimeAgo date={date} locale='en-US' />
             </p>
           </div>
         </div>

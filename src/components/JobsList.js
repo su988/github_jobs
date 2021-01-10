@@ -21,7 +21,7 @@ function JobsList() {
 
   return (
     <main className='jobsList'>
-      {!isLoaded && <div>Loading...</div>}
+      {!isLoaded && <div id='loading'>Loading...</div>}
       {filteredJobs.length === 0 ? (
         <div className='no-result-btn'>
           <h6>No Matching Result</h6>

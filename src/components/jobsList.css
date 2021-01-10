@@ -2,6 +2,16 @@
   margin: 25px 0;
 }
 
+#loading {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #334680;
+  margin-bottom: 10px;
+}
+
 .no-result-btn h6 {
   font-family: Roboto;
   font-style: normal;
