@@ -2,6 +2,7 @@ import React, { useContext, useEffect, Fragment } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Context } from '../Context';
 import './jobDetail.css';
+import { FaLongArrowAltLeft } from 'react-icons/fa';
 
 function JobInfo() {
   const { jobId } = useParams();
@@ -18,7 +19,10 @@ function JobInfo() {
         <div className='jobDetail'>
           <div className='side'>
             <Link to='/'>
-              <p>Back to search</p>
+              <p>
+                <FaLongArrowAltLeft />
+                Back to search
+              </p>
             </Link>
             <p id='apply'>HOW TO APPLY</p>
             <div
@@ -27,8 +31,14 @@ function JobInfo() {
             ></div>
           </div>
           <div className='main'>
-            <p id='title'>{selectedJob.title}</p>
-            <p id='type'>{selectedJob.type}</p>
+            <div className='main-flex'>
+              <div>
+                <p id='title'>{selectedJob.title}</p>
+              </div>
+              <div>
+                <p id='type'>{selectedJob.type}</p>
+              </div>
+            </div>
             <p id='date'>{selectedJob.created_at}</p>
             <div className='logo-flex'>
               <div>

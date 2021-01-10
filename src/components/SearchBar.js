@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Context } from '../Context';
+// import { FaBriefcase, FaGlobeAmericas } from 'react-icons/fa';
 import './searchBar.css';
 
 function SearchBar(props) {
@@ -34,6 +35,7 @@ function SearchBar(props) {
         value={keyword}
         onChange={handleChange}
       />
+      {/* {props.location === 'header' ? <FaBriefcase /> : <FaGlobeAmericas />} */}
       {props.location === 'header' ? (
         <button onClick={handleSubmit}>Search</button>
       ) : null}

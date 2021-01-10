@@ -43,6 +43,26 @@
   margin-bottom: 25px;
 }
 
+.sideSearchBar {
+  position: relative;
+}
+
+.sideSearchBar svg,
+.headerSearchBar svg {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: #b9bdcf;
+}
+
+.headerSearchBar svg {
+  top: 18px;
+}
+
+input::placeholder {
+  color: #b9bdcf;
+}
+
 @media (min-width: 1025px) {
   .headerSearchBar input {
     width: 790px;

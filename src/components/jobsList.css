@@ -2,6 +2,27 @@
   margin: 25px 0;
 }
 
+.no-result-btn h6 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #334680;
+  margin-bottom: 10px;
+}
+
+.no-result-btn button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #334680;
+  color: #ffffff;
+}
+
+.no-result-btn button:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .jobsList {
     margin-left: 30px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './jobCard.css';
+import { FaGlobeAmericas, FaRegClock } from 'react-icons/fa';
 
 function JobCard({ id, logo, company, title, type, location, date }) {
   return (
@@ -14,8 +15,14 @@ function JobCard({ id, logo, company, title, type, location, date }) {
           <p>{title}</p>
           <p>{type}</p>
           <div className='card-footer'>
-            <p>{location}</p>
-            <p>{date}</p>
+            <p>
+              <FaGlobeAmericas />
+              {location}
+            </p>
+            <p>
+              <FaRegClock />
+              {date}
+            </p>
           </div>
         </div>
       </div>

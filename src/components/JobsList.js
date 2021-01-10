@@ -23,7 +23,7 @@ function JobsList() {
     <main className='jobsList'>
       {!isLoaded && <div>Loading...</div>}
       {filteredJobs.length === 0 ? (
-        <div>
+        <div className='no-result-btn'>
           <h6>No Matching Result</h6>
           <button onClick={() => handleSearch('')}>Go back</button>
         </div>
