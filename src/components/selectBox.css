@@ -5,6 +5,8 @@
 
 .checkbox label {
   color: #334680;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
 }
 
 .radio {
@@ -15,6 +17,8 @@
 .radio label {
   padding: 10px;
   color: #334680;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
 }
 
 .checkbox input,

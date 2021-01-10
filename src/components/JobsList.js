@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import JobCard from './JobCard';
 import { Context } from '../Context';
+import './jobsList.css';
 
 function JobsList() {
   const { filteredJobs, handleSearch, isLoaded } = useContext(Context);
@@ -19,8 +20,7 @@ function JobsList() {
   ));
 
   return (
-    <main>
-      <h4>Job List</h4>
+    <main className='jobsList'>
       {!isLoaded && <div>Loading...</div>}
       {filteredJobs.length === 0 ? (
         <div>

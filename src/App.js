@@ -8,7 +8,9 @@ import './app.css';
 function App() {
   return (
     <Container>
-      <h4>Github Jobs</h4>
+      <h4>
+        Github <span>Jobs</span>
+      </h4>
       <Switch>
         <Route exact path='/'>
           <Home />
