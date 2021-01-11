@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 import ReactTimeAgo from 'react-time-ago';
 
-function JobInfo() {
+function JobDetail() {
   const { jobId } = useParams();
   const { getJobDetail, selectedJob } = useContext(Context);
 
@@ -78,4 +78,4 @@ function JobInfo() {
   );
 }
 
-export default JobInfo;
+export default JobDetail;
