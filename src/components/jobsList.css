@@ -1,5 +1,5 @@
 .jobsList {
-  margin: 25px 0;
+  margin: 25px auto;
 }
 
 #loading {
@@ -41,6 +41,10 @@
   border: 1px solid #1e86ff;
   color: #1e86ff;
   background-color: #fff;
+}
+
+.MuiPaginationItem-page.Mui-selected {
+  background-color: red;
 }
 
 @media (min-width: 768px) {

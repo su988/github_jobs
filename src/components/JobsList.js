@@ -21,7 +21,11 @@ function JobsList() {
         marginTop: theme.spacing(2)
       },
       float: 'right',
-      marginBottom: '40px'
+      marginBottom: '40px',
+      '& .MuiPaginationItem-page.Mui-selected': {
+        background: '#1E86FF',
+        color: '#fff'
+      }
     }
   }));
 
@@ -31,7 +35,7 @@ function JobsList() {
     return (
       <div className={classes.root}>
         <Pagination
-          count={filteredJobs.length / 5}
+          count={Math.ceil(filteredJobs.length / 5)}
           variant='outlined'
           shape='rounded'
           page={currentPage}
@@ -41,7 +45,6 @@ function JobsList() {
     );
   }
 
-  console.log(currentPage);
   const jobsList = currentJobs.map((job) => (
     <JobCard
       key={job.id}
