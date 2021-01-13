@@ -1,12 +1,48 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import JobCard from './JobCard';
 import { Context } from '../Context';
+import { makeStyles } from '@material-ui/core/styles';
+import { Pagination } from '@material-ui/lab';
 import './jobsList.css';
 
 function JobsList() {
   const { filteredJobs, handleSearch, isLoaded } = useContext(Context);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [jobsPerPage] = useState(5);
 
-  const jobsList = filteredJobs.map((job) => (
+  // Get current 5 jobs
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      '& > *': {
+        marginTop: theme.spacing(2)
+      },
+      float: 'right',
+      marginBottom: '40px'
+    }
+  }));
+
+  function PaginationRounded() {
+    const classes = useStyles();
+
+    return (
+      <div className={classes.root}>
+        <Pagination
+          count={filteredJobs.length / 5}
+          variant='outlined'
+          shape='rounded'
+          page={currentPage}
+          onChange={(event, val) => setCurrentPage(val)}
+        />
+      </div>
+    );
+  }
+
+  console.log(currentPage);
+  const jobsList = currentJobs.map((job) => (
     <JobCard
       key={job.id}
       id={job.id}
@@ -28,7 +64,10 @@ function JobsList() {
           <button onClick={() => handleSearch('')}>Go back</button>
         </div>
       ) : (
-        jobsList
+        <Fragment>
+          {jobsList}
+          <PaginationRounded />
+        </Fragment>
       )}
     </main>
   );
