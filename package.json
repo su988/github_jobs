@@ -17,6 +17,7 @@
     "react-time-ago": "^6.2.2",
     "web-vitals": "^0.2.4"
   },
+  "proxy": "https://jobs.github.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

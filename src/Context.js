@@ -9,7 +9,7 @@ function ContextProvider({ children }) {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState('');
 
-  const url = 'https://jobs.github.com/positions.json';
+  const url = '/positions.json';
 
   const fetchData = () => {
     setIsLoaded(false);
