@@ -56,8 +56,6 @@ function ContextProvider({ children }) {
     setSelectedJob(jobs.find((job) => job.id === id));
   };
 
-  console.log(filteredJobs);
-
   return (
     <Context.Provider
       value={{
